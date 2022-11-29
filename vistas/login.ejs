@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Nomina</title>
+</head>
+<body>
+    <div class ="container">
+        <div class="login_content">
+            <img src="fondo-bg.jpg" alt="login image" class="login_img">
+            <form action="/auth" method="post" class="login_form">
+                <div>
+                    <h1 class="login_title">
+                        <span>Bienvenido</span>
+                    </h1>
+                    <p class="login_description">Inicia sesion para continuar</p>
+                </div>
+                <div>
+                    <div class="login_inputs">
+                        <div>
+                            <label for="" class="login_label">Email</label>
+                            <input type="email" placeholder="Igresa tu correo" required class="login_input">
+                        </div>
+                        <div>
+                            <label for="" class="login_label">Contraseña</label>
+                            <div class="login_box">
+                            <input type="password" placeholder="Ingresa tu contraseña " required class="login_input" id="input_pass">
+                            <i class="ri-eye-off-line login_eye" id="input-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="login_check">
+                        <input type="checkbox" class="login_check-input">
+                        <label for="" class="login_check-label">Recordarme</label>
+                    </div>
+                </div>
+                <div>
+                    <div class="login_buttons">
+                        <button class="login_button">Iniciar sesion</button>
+                        <button class="login_button login_button-ghost" ><a href="registro.ejs">Registrarse</a></button>
+                        <a href="#" class="login_forgot">Olvido su contraseña</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    % if(typeof alert != "undefined"){%>
+        <script>
+            Swal.fire({
+                title:'<%= alertTittle%>',
+                text:'<%= %>',
+                icon:'<%= %>',
+                showConfirmButton:<%= showConfirmButton %>,
+                timer<%= timer %>:
+            }).then(()=>{
+                window.location='/<%=ruta %>'
+            })
+        </script>
+        % }%>
+    }
+</body>
+</html> 
